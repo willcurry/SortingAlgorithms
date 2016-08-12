@@ -20,7 +20,7 @@ public class SortAlgorithmsTests {
     @Test
     public void selectionSortDoesNotSortArrayWithOnlyOneValue() {
         int[] test = {1};
-        assertEquals(test, sortAlgorithms.selectionSort(test));
+        assertTrue(sortAlgorithms.selectionSort(test) == test);
     }
 
     @Test
@@ -30,5 +30,26 @@ public class SortAlgorithmsTests {
         assertThat(sortAlgorithms.selectionSort(test)[1], is(2));
         assertThat(sortAlgorithms.selectionSort(test)[2], is(3));
         assertThat(sortAlgorithms.selectionSort(test)[3], is(4));
+    }
+
+    @Test
+    public void insertionSortReturnsAnEmptyArrayWhenCalledWithNoArray() {
+        int[] expected = {};
+        assertTrue(sortAlgorithms.inserstionSort(expected) == expected);
+    }
+
+    @Test
+    public void insertionSortDoesNotSortArrayWithOnlyOneValue() {
+        int[] expected = {1};
+        assertTrue(sortAlgorithms.inserstionSort(expected) == expected);
+    }
+
+    @Test
+    public void insertionSortSortsTheArrayFromLowestToHighest() {
+        int[] test = {3, 2, 4, 1};
+        assertThat(sortAlgorithms.inserstionSort(test)[0], is(1));
+        assertThat(sortAlgorithms.inserstionSort(test)[1], is(2));
+        assertThat(sortAlgorithms.inserstionSort(test)[2], is(3));
+        assertThat(sortAlgorithms.inserstionSort(test)[3], is(4));
     }
 }
