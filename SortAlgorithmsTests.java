@@ -13,23 +13,23 @@ public class SortAlgorithmsTests {
 
     @Test
     public void selectionSortReturnsAnEmptyArrayWhenCalledWithNoArray() {
-        int[] test = {};
-        assertTrue(sortAlgorithms.selectionSort(test) == test);
+        int[] expected = {};
+        assertTrue(sortAlgorithms.selectionSort(expected) == expected);
     }
 
     @Test
     public void selectionSortDoesNotSortArrayWithOnlyOneValue() {
-        int[] test = {1};
-        assertTrue(sortAlgorithms.selectionSort(test) == test);
+        int[] expected = {1};
+        assertTrue(sortAlgorithms.selectionSort(expected) == expected);
     }
 
     @Test
     public void selectionSortSortsTheArrayFromLowestToHighest() {
-        int[] test = {3, 2, 4, 1};
-        assertThat(sortAlgorithms.selectionSort(test)[0], is(1));
-        assertThat(sortAlgorithms.selectionSort(test)[1], is(2));
-        assertThat(sortAlgorithms.selectionSort(test)[2], is(3));
-        assertThat(sortAlgorithms.selectionSort(test)[3], is(4));
+        int[] array = {3, 2, 4, 1};
+        assertThat(sortAlgorithms.selectionSort(array)[0], is(1));
+        assertThat(sortAlgorithms.selectionSort(array)[1], is(2));
+        assertThat(sortAlgorithms.selectionSort(array)[2], is(3));
+        assertThat(sortAlgorithms.selectionSort(array)[3], is(4));
     }
 
     @Test
@@ -46,10 +46,31 @@ public class SortAlgorithmsTests {
 
     @Test
     public void insertionSortSortsTheArrayFromLowestToHighest() {
-        int[] test = {3, 2, 4, 1};
-        assertThat(sortAlgorithms.inserstionSort(test)[0], is(1));
-        assertThat(sortAlgorithms.inserstionSort(test)[1], is(2));
-        assertThat(sortAlgorithms.inserstionSort(test)[2], is(3));
-        assertThat(sortAlgorithms.inserstionSort(test)[3], is(4));
+        int[] array = {3, 2, 4, 1};
+        assertThat(sortAlgorithms.inserstionSort(array)[0], is(1));
+        assertThat(sortAlgorithms.inserstionSort(array)[1], is(2));
+        assertThat(sortAlgorithms.inserstionSort(array)[2], is(3));
+        assertThat(sortAlgorithms.inserstionSort(array)[3], is(4));
+    }
+
+    @Test
+    public void bubbleSortReturnsAnEmptyArrayWhenCalledWithNoArray() {
+        int[] expected = {};
+        assertTrue(sortAlgorithms.bubbleSort(expected) == expected);
+    }
+
+    @Test
+    public void bubbleSortDoesNotSortArrayWithOnlyOneValue() {
+        int[] expected = {1};
+        assertTrue(sortAlgorithms.bubbleSort(expected) == expected);
+    }
+
+    @Test
+    public void bubbleSortSortsTheArrayFromLowestToHighest() {
+        int[] array = {3, 2, 4, 1};
+        assertThat(sortAlgorithms.bubbleSort(array)[0], is(1));
+        assertThat(sortAlgorithms.bubbleSort(array)[1], is(2));
+        assertThat(sortAlgorithms.bubbleSort(array)[2], is(3));
+        assertThat(sortAlgorithms.bubbleSort(array)[3], is(4));
     }
 }
