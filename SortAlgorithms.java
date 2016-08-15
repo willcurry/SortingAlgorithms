@@ -38,7 +38,6 @@ public class SortAlgorithms {
                     array[j - 1] = array[j];
                     array[j] = temp;
                 }
-
             }
         }
         return array;
